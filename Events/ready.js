@@ -66,7 +66,7 @@ module.exports = {
       console.log(`Registered ${commands.length} (/) application commands locally.`.magenta.bold.italic)
       }
         //Log that there is no permission to register slashCommands to that guild if there isn't.
-      else if ((await guildRegister.json()).hasOwnPreprty(`message`) && (await guildRegister.json()).message.startsWith(`Missing Access`)) {
+      else if ((await guildRegister.json()).hasOwnProperty(`message`) && (await guildRegister.json()).message.startsWith(`Missing Access`)) {
         return console.log(`The bot is not registered to ${(await client.guilds.fetch(guildId)).name ?? `Unkown guild`} with application.commands intent, please use https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot applications.commands&guild_id=${guildId} to re-invite it`)
       } else {
         //Otherwise, result.
